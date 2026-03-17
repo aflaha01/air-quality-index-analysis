@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #0b0b0b;
+    color: #fff;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #121212;
+    padding: 20px;
+}
+
+.logo {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.nav-item {
+    display: block;
+    padding: 12px;
+    color: #bbb;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    background: #1f1f1f;
+    color: #fff;
+}
+
+/* Main */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.random-btn {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background: #1e1e1e;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.form-card {
+    background: #121212;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+input, select {
+    padding: 10px;
+    background: #1e1e1e;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.predict-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0f172a;
+    border-left: 4px solid #22c55e;
+    border-radius: 6px;
+}

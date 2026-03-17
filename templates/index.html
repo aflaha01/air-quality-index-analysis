@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">AIR QUALITY INDEX PREDICTION MODEL</h1>
+
+<button class="random-btn" onclick="generateRandom()">Generate Random Data</button>
+
+<form action="/predict" method="post" class="form-card">
+
+    <div class="grid">
+        <input type="number" step="any" name="pm2_5" placeholder="PM2.5" required>
+        <input type="number" step="any" name="pm10" placeholder="PM10" required>
+        <input type="number" step="any" name="no" placeholder="NO" required>
+        <input type="number" step="any" name="no2" placeholder="NO2" required>
+        <input type="number" step="any" name="n_ox" placeholder="NOx" required>
+        <input type="number" step="any" name="nh3" placeholder="NH3" required>
+        <input type="number" step="any" name="co" placeholder="CO" required>
+        <input type="number" step="any" name="so2" placeholder="SO2" required>
+        <input type="number" step="any" name="o3" placeholder="O3" required>
+        <input type="number" step="any" name="benzene" placeholder="Benzene" required>
+        <input type="number" step="any" name="toluene" placeholder="Toluene" required>
+    </div>
+
+    <div class="row">
+        <select name="is_weekend" required>
+            <option value="">Is Weekend?</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <select name="season" required>
+            <option value="">Season</option>
+            <option value="0">Winter</option>
+            <option value="1">Summer</option>
+            <option value="2">Monsoon</option>
+            <option value="3">Autumn</option>
+        </select>
+
+         <!-- City Selection -->
+        <select name="city" required class="city-select">
+            <option value="">Select City</option>
+            {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <button type="submit" class="predict-btn">Predict AQI</button>
+</form>
+
+{% if prediction_text %}
+<div class="result">
+    {{ prediction_text }}
+</div>
+{% endif %}
+
+{% endblock %}
